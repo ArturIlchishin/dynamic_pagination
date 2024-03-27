@@ -1,0 +1,80 @@
+/* HELLO comp starts here */
+.hello__container {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hello__title {
+    font-size: 7vh;
+    color: #0a000a;
+}
+/* HELLO comp ends here */
+
+/*COMMENTS starts here */
+
+.comment__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    background: #f0e2ff;
+    /*padding: 0 10px 0 10px;*/
+    margin: 10px;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.comment__container:hover {
+    transform: scale(103%);
+}
+
+.comment__title {
+    display: flex;
+    width: 100%;
+    background: #d587b3;
+    font-size: 1.4vh;
+    padding: 10px;
+    border-radius: 7px 7px 0 0;
+}
+
+.comment__body {
+    padding: 5px;
+}
+
+.comment__body-text {
+    color: #0a000a;
+}
+
+.comments__button__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    width: 10vw;
+    height: 4vh;
+    border: none;
+    background: #efbcda;
+    margin: 5px;
+    transition: 0.2s;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.button:hover {
+    transform: scale(110%);
+}
+
+/*COMMENTS ends here */
