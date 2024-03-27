@@ -6,9 +6,9 @@ interface IChildren {
 }
 
 const animations = {
-    initial: {opacity: 0, y: -1000},
+    initial: {opacity: 0, y: 1000},
     animate: {opacity: 1, y: 0},
-    exit: {opacity: 0, y: +700,},
+    exit: {opacity: 0, y: -700,},
 }
 
 export const AnimatedComponent = ({children}: IChildren) => {
