@@ -71,7 +71,7 @@ export const CommentsComponent = () => {
                         </section>
                 )}
                 <div className={'comments__button__container'}>
-                    <button className={`button ${currentPage >= 5 && currentPage <=10 ? 'visible' : ''}`}
+                    <button className={`button ${currentPage > 5 && currentPage <=10 ? 'visible' : ''}`}
                             onClick={ handleClick }>Show more</button>
                 </div>
             </AnimatedComponent>
