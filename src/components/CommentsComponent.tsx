@@ -12,7 +12,6 @@ export interface IComments {
 }
 
 export const CommentsComponent = () => {
-
     const [comments, setComments] = useState<IComments[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [requesting, setRequest] = useState<boolean>(true);
@@ -40,6 +39,19 @@ export const CommentsComponent = () => {
         };
     }, [currentPage]);
 
+    const sendRequestAndChangeUrl = () => {
+        setRequest((prevState) => true);
+        try {
+            const link = document.createElement('a')
+            link.href = `#${currentPage}`
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+        } catch (error) {
+            console.error(error)
+        }
+    };
+
     const handleScroll = (e: any): void => {
         //Общая высота страницы с учетом скролла
         const totalHeight = e.target.documentElement.scrollHeight;
@@ -48,14 +60,16 @@ export const CommentsComponent = () => {
         //Высота видимой области страницы
         const windowHeight = window.innerHeight;
 
-        if(totalHeight - (scrollFromTop + windowHeight) < 100 && currentPage <= 5) {
-            setRequest(prevState => true);
+        if (totalHeight - (scrollFromTop + windowHeight) < 100 && currentPage <= 5) {
+            sendRequestAndChangeUrl();
         }
-    }
+    };
 
     const handleClick = () : void => {
-        if(currentPage >= 5 && currentPage <=10) setRequest(prevState => true)
-    }
+        if(currentPage >= 5 && currentPage <=10) {
+            sendRequestAndChangeUrl();
+        }
+    };
 
     return (
             <AnimatedComponent>
